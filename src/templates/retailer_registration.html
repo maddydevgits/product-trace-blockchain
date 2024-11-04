@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retailer Registration Form</title>
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&family=Lato:wght@300&display=swap">
+    
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: 'Lato', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        
+        /* Form Container */
+        .registration-form {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #ccbebe;
+            box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.783);
+        }
+        
+        /* Form Heading */
+        .registration-form h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        /* Form Groups */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        /* Labels */
+        .form-group label {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        /* Input Fields */
+        .form-group input {
+            font-family: 'Lato', sans-serif;
+            font-size: 14px;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid hsl(81, 87%, 76%);
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        /* Submit Button */
+        .form-group button {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .form-group button:hover {
+            background-color: #0069d9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="registration-form">
+    <h2>Retailer Registration</h2>
+    <form action="/retailerRegistrationForm" method="POST">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="contact-name">Contact Name</label>
+            <input type="text" id="contact" name="contact" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Register</button>
+        </div>
+        <p>If you have account, <a href="/retailerLogin">Login</a></p>
+        <p>Want to go to Home, <a href="/">Home</a></p>
+        <span style="color:green">{{message}}</span>
+        <span style="color:red">{{error}}</span>
+    </form>
+</div>
+
+</body>
+</html>

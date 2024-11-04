@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturer View Product Table</title>
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Montserrat:wght@600&display=swap">
+
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: hwb(195 73% 3%);
+        }
+
+        /* Table Container */
+        .table-container {
+            width: 90%;
+            margin: 20px;
+        }
+
+        /* Table Heading */
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Roboto', sans-serif;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Table Headers */
+        th {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            background-color: #007BFF;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        /* Table Cells */
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Alternating Row Colors */
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Last Row No Border */
+        tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <h2>Manufacturer View Products</h2>
+    <form method="post" action="/updateDistributor">
+        <table>
+            <thead>
+                <tr>
+                    <th>Manufacturer</th>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Product Description</th>
+                    <th>Distributor</th>
+                    <th>Retailer</th>
+                    <th>Product Status</th>
+                    <th>Distributor Status</th>
+                    <th>Retailer Status</th>
+                    <th>Update Distributor</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{product[1]}}</td>
+                        <td>{{product[2]}}</td>
+                        <td>{{product[3]}}</td>
+                        <td>{{ product[4] if product[7] else 'Not Available' }}</td>
+                        <td>{{ product[5] if product[8] else 'Not Available'  }}</td>
+                        <td>{{ 'Active' if product[6] else 'In-Active' }}</td>
+                        <td>{{ 'Active' if product[7] else 'In-Active' }}</td>
+                        <td>{{ 'Active' if product[8] else 'In-Active' }}</td>
+                        {% if not product[7]%}
+                        <td>
+                            <select name="distributor_id">
+                                <option value="">Select Distributor</option>
+                                {% for distributor in d %}
+                                    <option value="{{distributor[1]}}">{{ distributor[1] }}</option>
+                                {% endfor %}
+                            </select>
+                            <input type="hidden" name="product_id" value="{{ product[1] }}">
+                            <button type="submit">Update</button>
+                        </td>
+                        {%else%}
+                        <td>Already Delivered</td>
+                        {%endif%}
+                    </tr>
+                {% endfor %}
+                <!-- Additional rows can be added here -->
+            </tbody>
+        </table>
+    </form>
+    <p>If you want to add a new product , <a href="/manufacturerDashboard">Add Products</a></p>
+    <p>Do you want to Logout, <a href="/logout">Logout</a></p>
+</div>
+
+</body>
+</html>

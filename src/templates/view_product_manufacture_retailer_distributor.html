@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Product Table</title>
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Montserrat:wght@600&display=swap">
+
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Table Container */
+        .table-container {
+            width: 90%;
+            margin: 20px;
+        }
+
+        /* Table Heading */
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+            color: hsl(319, 76%, 88%);
+            margin-bottom: 20px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Roboto', sans-serif;
+            background-color: #fff;
+            box-shadow: 0 4px 10px hsla(190, 93%, 82%, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Table Headers */
+        th {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            background-color: hwb(211 75% 2%);
+            color: hsl(0, 12%, 60%);
+            padding: 12px;
+            text-align: left;
+        }
+
+        /* Table Cells */
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Alternating Row Colors */
+        tr:nth-child(even) {
+            background-color: hwb(0 70% 5%);
+        }
+
+        /* Last Row No Border */
+        tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <h2>View Products</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Manufacturer</th>
+                <th>Distributor</th>
+                <th>Retailer</th>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Manufacturer A</td>
+                <td>Distributor X</td>
+                <td>Retailer 1</td>
+                <td>001</td>
+                <td>Product A</td>
+                <td>This is a description of Product A.</td>
+            </tr>
+            <tr>
+                <td>Manufacturer B</td>
+                <td>Distributor Y</td>
+                <td>Retailer 2</td>
+                <td>002</td>
+                <td>Product B</td>
+                <td>This is a description of Product B.</td>
+            </tr>
+            <tr>
+                <td>Manufacturer C</td>
+                <td>Distributor Z</td>
+                <td>Retailer 3</td>
+                <td>003</td>
+                <td>Product C</td>
+                <td>This is a description of Product C.</td>
+            </tr>
+            <!-- Additional rows can be added here -->
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

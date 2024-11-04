@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturer Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hwb(0 36% 10%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-form {
+            background: rgb(236, 186, 186);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(67, 43, 43, 0.1);
+        }
+        .login-form h2 {
+            margin-bottom: 20px;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-form">
+    <h2>Manufacturer Login</h2>
+    <form action="/manufacturerLoginForm" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <p>If you don't have account, <a href="/manufacturer">Register</a></p>
+        <p>Want to go to Home, <a href="/">Home</a></p>
+        <span style="color:green">{{message}}</span>
+        <span style="color:red">{{error}}</span>
+    </form>
+</div>
+
+</body>
+</html>

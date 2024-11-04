@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trace Results</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container for the trace results */
+        .trace-results {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px 40px;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        /* Header styles */
+        .trace-results h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Section headers */
+        .trace-results h3 {
+            color: #333;
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+
+        /* Product and entity details */
+        .trace-results p {
+            font-size: 16px;
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .trace-results strong {
+            color: #333;
+        }
+
+        /* Divider line */
+        .trace-results .divider {
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 20px 0;
+        }
+
+        /* No assignment message */
+        .trace-results em {
+            color: #888;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="trace-results">
+        <h2>Product Trace Results</h2>
+        
+        <h3>Product Details</h3>
+        <p><strong>Product ID:</strong> {{ product[1] }}</p>
+        <p><strong>Product Name:</strong> {{ product[2] }}</p>
+        <p><strong>Description:</strong> {{ product[3] }}</p>
+
+        <div class="divider"></div>
+
+        <h3>Manufacturer Details</h3>
+        <p><strong>Name:</strong> {{ manufacturer[0] }}</p>
+        <p><strong>Address:</strong> {{ manufacturer[1] }}</p>
+        <p><strong>Email:</strong> {{ manufacturer[2] }}</p>
+        <p><strong>Contact:</strong> {{ manufacturer[4] }}</p>
+
+        <div class="divider"></div>
+
+        {% if distributor %}
+            <h3>Distributor Details</h3>
+            <p><strong>Name:</strong> {{ distributor[0] }}</p>
+            <p><strong>Address:</strong> {{ distributor[1] }}</p>
+            <p><strong>Email:</strong> {{ distributor[2] }}</p>
+            <p><strong>Contact:</strong> {{ distributor[4] }}</p>
+        {% else %}
+            <p><em>No distributor assigned yet.</em></p>
+        {% endif %}
+
+        <div class="divider"></div>
+
+        {% if retailer %}
+            <h3>Retailer Details</h3>
+            <p><strong>Name:</strong> {{ retailer[0] }}</p>
+            <p><strong>Address:</strong> {{ retailer[1] }}</p>
+            <p><strong>Email:</strong> {{ retailer[2] }}</p>
+            <p><strong>Contact:</strong> {{ retailer[4] }}</p>
+        {% else %}
+            <p><em>No retailer assigned yet.</em></p>
+        {% endif %} <br/><br/>
+        <p style="color:red">Want to go to Customer, <a href="/customer">Customer</a></p>
+        <p style="color:red">Want to go to Home, <a href="/">Home</a></p>
+    </div>
+    
+</body>
+</html>

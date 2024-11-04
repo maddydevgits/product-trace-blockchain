@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Login</title>
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Montserrat:wght@600&display=swap">
+
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Form Container */
+        .login-form {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form Heading */
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+            color: hwb(0 69% 5%);
+            margin-bottom: 20px;
+        }
+
+        /* Form Groups */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        /* Labels */
+        .form-group label {
+            font-size: 14px;
+            color: hwb(0 78% 4%);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Input Fields */
+        .form-group input {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid hwb(0 71% 3%);
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Submit Button */
+        .form-group button {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            padding: 10px;
+            background-color: hwb(211 75% 8%);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-form">
+    <h2>Customer Login</h2>
+            <h2>Trace Product in Supply Chain</h2>
+            <form action="/traceProduct" method="POST">
+                <div class="form-group">
+                    <label for="product-id">Product ID</label>
+                    <input type="text" id="product-id" name="product_id" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Trace</button>
+                </div>
+            </form>
+            <p>Want to go to Home, <a href="/">Home</a></p>
+</div>
+
+</body>
+</html>

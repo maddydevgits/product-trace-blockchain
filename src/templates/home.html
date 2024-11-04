@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Chain Dashboard</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container for the cards */
+        .dashboard {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            padding: 20px;
+            max-width: 100%;
+        }
+
+        /* Individual card styling */
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 180px;
+            padding: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* Card hover effect */
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Card title styling */
+        .card h3 {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #007bff;
+        }
+
+        /* Icon styling within the card */
+        .card i {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Manufacturer Card -->
+        <a href="/manufacturer" class="card">
+            <i class="fas fa-industry"></i>
+            <h3>Manufacturer</h3>
+        </a>
+
+        <!-- Distributor Card -->
+        <a href="/distributor" class="card">
+            <i class="fas fa-truck"></i>
+            <h3>Distributor</h3>
+        </a>
+
+        <!-- Retailer Card -->
+        <a href="/retailer" class="card">
+            <i class="fas fa-store"></i>
+            <h3>Retailer</h3>
+        </a>
+
+        <!-- User Card -->
+        <a href="/customer" class="card">
+            <i class="fas fa-user"></i>
+            <h3>User</h3>
+        </a>
+    </div>
+
+    <!-- Font Awesome for Icons (using CDN) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
